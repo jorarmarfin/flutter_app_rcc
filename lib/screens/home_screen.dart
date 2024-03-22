@@ -1,7 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app_rcc/data/options_data.dart';
+import 'package:flutter_app_rcc/themes/app_theme.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-import '../providers/current_index_provider.dart';
+import 'package:go_router/go_router.dart';
+import 'components/components.dart';
 
 class HomeScreen extends ConsumerWidget {
   static const String routeName = 'home_screen';
@@ -9,39 +12,26 @@ class HomeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    const textStyle = TextStyle(fontSize: 15);
-    final currentIndex = ref.watch(currentIndexProvider);
+    final textStyle = Theme.of(context).textTheme;
     return Scaffold(
-      body:const Column(
+      body:Column(
         children: [
-          SizedBox(height: 50),
-          Sigla(),
-          SizedBox(height: 20),
-          LogoName(textStyle: textStyle),
-          Logo50(textStyle: textStyle),
-
+          const SizedBox(height: 50),
+          Sigla(textStyle: textStyle.titleLarge!),
+          const SizedBox(height: 20),
+          LogoName(textStyle: textStyle.titleLarge!),
+          Logo50(textStyle: textStyle.titleLarge!),
+          ListView(
+            shrinkWrap: true,
+            children: listOptionsData.map((option) => ListTile(
+              leading: Image.asset(option.icon, width: 50, height: 50),
+              title: Text(option.title, style: textStyle.titleLarge),
+              onTap: () => context.pushNamed(option.routeName),
+            )).toList(),
+          ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: ref.read(currentIndexProvider.notifier).state,
-        onTap: (index) {
-          //ref.read(currentIndexProvider).state = index;
-        },
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Inicio',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Buscar',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Perfil',
-          ),
-        ],
-      )
+      bottomNavigationBar: const CustomNavigatorBar()
     );
   }
 }
@@ -104,9 +94,9 @@ class LogoName extends StatelessWidget {
 
 class Sigla extends StatelessWidget {
   const Sigla({
-    super.key,
+    super.key, required this.textStyle,
   });
-
+  final TextStyle textStyle;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -119,7 +109,7 @@ class Sigla extends StatelessWidget {
               border: Border(
                   bottom: BorderSide(color: Colors.black, width: 2)),
             ),
-            child: const Text('RCC')),
+            child: Text('RCC',style: textStyle,)),
         const SizedBox(width: 20),
       ],
     );
