@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_rcc/data/options_data.dart';
 import 'package:flutter_app_rcc/themes/app_theme.dart';
@@ -21,13 +20,25 @@ class HomeScreen extends ConsumerWidget {
           const SizedBox(height: 20),
           LogoName(textStyle: textStyle.titleLarge!),
           Logo50(textStyle: textStyle.titleLarge!),
-          ListView(
-            shrinkWrap: true,
-            children: listOptionsData.map((option) => ListTile(
-              leading: Image.asset(option.icon, width: 50, height: 50),
-              title: Text(option.title, style: textStyle.titleLarge),
-              onTap: () => context.pushNamed(option.routeName),
-            )).toList(),
+          Expanded(
+            child: ListView(
+              shrinkWrap: true,
+              children: listOptionsData.map((option) => Container(
+                margin: const EdgeInsets.only(left: 10, right: 10),
+                padding: const EdgeInsets.only(bottom: 10,top: 10),
+                decoration:const BoxDecoration(
+                  border: Border(bottom: BorderSide(color: appBrownColor, width: 1)),
+                ),
+                child: ListTile(
+                  leading: Image.asset(option.icon, width: 50, height: 50),
+                  trailing: const Icon(Icons.arrow_forward_ios),
+                  title: Text(option.title, style: textStyle.titleLarge),
+                  onTap: () {
+                        context.pushNamed(option.routeName);
+                  },
+                ),
+              )).toList(),
+            ),
           ),
         ],
       ),
@@ -49,7 +60,7 @@ class Logo50 extends StatelessWidget {
     return Row(
       children: [
         const SizedBox(width: 20), // Espacio entre el texto y la imagen
-        Image.asset('assets/images/50_years.png', width: 150, height: 150),
+        Image.asset(logo50, width: 150, height: 150),
         const SizedBox(width: 15), // Espacio entre la imagen y el texto
         Column(
           crossAxisAlignment: CrossAxisAlignment.end,
@@ -85,7 +96,7 @@ class LogoName extends StatelessWidget {
           ],
         ),
         const SizedBox(width: 10), // Espacio entre el texto y la imagen
-        Image.asset('assets/images/logo.png', width: 100, height: 100),
+        Image.asset(logoRcc, width: 100, height: 100),
         const SizedBox(width: 15), // Espacio entre la imagen y el texto
       ],
     );

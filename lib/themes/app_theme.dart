@@ -8,6 +8,9 @@ const Color appBrownColor = Color(0xFF5B3423);
 const Color appBlueColor = Color(0xFF2B93FB);
 const Color appGreenColor = Color(0xFF398c0e);
 const iconDove = 'assets/icons/dove.png';
+const logoRcc = 'assets/images/logo.png';
+const logo50 = 'assets/images/50_years.png';
+
 class AppTheme {
   AppTheme();
 
@@ -24,7 +27,7 @@ class AppTheme {
           fontWeight: FontWeight.bold,
           color: appBrownColor,
         ),
-        bodyLarge: GoogleFonts.montserrat(),
+        bodyLarge: GoogleFonts.montserrat(fontSize: 20, color: appBrownColor,),
       ));
 
   final BoxDecoration appBoxDecoration = BoxDecoration(

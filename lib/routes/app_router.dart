@@ -6,6 +6,15 @@ final appRouter = GoRouter(initialLocation: '/', routes: <RouteBase>[
     path: '/',
     name: HomeScreen.routeName,
     builder: (context, state) => const HomeScreen(),
-  )
-
+  ),
+  GoRoute(
+    path: '/about',
+    name: AboutScreen.routeName,
+    builder: (context, state) => const AboutScreen(),
+  ),
+  GoRoute(
+    path: '/history',
+    name: HistoryScreen.routeName,
+    builder: (context, state) => const HistoryScreen(),
+  ),
 ]);

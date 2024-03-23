@@ -10,7 +10,6 @@ class CustomNavigatorBar extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final currentIndex = ref.watch(currentIndexProvider);
     return NavigationBar(
       selectedIndex: ref.read(currentIndexProvider.notifier).state,
       onDestinationSelected: (index) {
