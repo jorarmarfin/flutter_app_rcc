@@ -17,4 +17,9 @@ final appRouter = GoRouter(initialLocation: '/', routes: <RouteBase>[
     name: HistoryScreen.routeName,
     builder: (context, state) => const HistoryScreen(),
   ),
+  GoRoute(
+    path: '/principios',
+    name: PrincipiosScreen.routeName,
+    builder: (context, state) => const PrincipiosScreen(),
+  ),
 ]);

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_rcc/data/options_data.dart';
 import 'package:flutter_app_rcc/screens/components/custom_app_bar.dart';
@@ -14,12 +13,13 @@ class HistoryScreen extends ConsumerWidget{
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final controller = ref.watch(videoControllerProvider);
+    final textStyle = Theme.of(context).textTheme;
     return Scaffold(
       appBar: CustomAppBar(title: listOptionsData[1].title),
       body: ListView(
         children: [
-          const Padding( padding: EdgeInsets.all(4.0),
-          child: Text('video sobre Historia de la Renovación Carismática Cátolica')),
+          Padding( padding: const EdgeInsets.all(4.0),
+          child: Text('Fuente: Renovacion Culiacan' ,style: textStyle.titleLarge ,)),
           YoutubePlayer(
             controller: controller,
             showVideoProgressIndicator: true,

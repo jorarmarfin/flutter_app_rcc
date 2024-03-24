@@ -1,3 +1,10 @@
+export 'package:flutter_app_rcc/screens/cruz_screen.dart';
+export 'package:flutter_app_rcc/screens/beata_screen.dart';
+export 'package:flutter_app_rcc/screens/documentos_screen.dart';
+export 'package:flutter_app_rcc/screens/mega_screen.dart';
+export 'package:flutter_app_rcc/screens/estructura_screen.dart';
+export 'package:flutter_app_rcc/screens/retos_screen.dart';
+export 'package:flutter_app_rcc/screens/principios_screen.dart';
 export 'package:flutter_app_rcc/screens/history_screen.dart';
 export 'package:flutter_app_rcc/screens/about_screen.dart';
 export 'package:flutter_app_rcc/screens/home_screen.dart';
