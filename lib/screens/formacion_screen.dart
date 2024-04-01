@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
 import 'components/components.dart';
-class DocumentosScreen extends StatelessWidget{
-  static const String routeName = 'documentos_screen';
-  const DocumentosScreen({super.key});
+class FormacionScreen extends StatelessWidget{
+  static const String routeName = 'formacion_screen';
+  const FormacionScreen({super.key});
 
   @override
   Widget build(BuildContext context){
     return const Scaffold(
-      appBar: CustomAppBar(title: 'Documentos'),
+      appBar: CustomAppBar(title: 'Formacion'),
       bottomNavigationBar: CustomNavigatorBar(),
       body: Center(
-        child: Text('Documentos'),
+        child: Text('Formacion'),
       ),
     );
   }

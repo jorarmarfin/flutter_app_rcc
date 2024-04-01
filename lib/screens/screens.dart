@@ -1,3 +1,7 @@
+export 'package:flutter_app_rcc/screens/oraciones_screen.dart';
+export 'package:flutter_app_rcc/screens/alabanzas_screen.dart';
+export 'package:flutter_app_rcc/screens/formacion_screen.dart';
+export 'package:flutter_app_rcc/screens/charis_screen.dart';
 export 'package:flutter_app_rcc/screens/cruz_screen.dart';
 export 'package:flutter_app_rcc/screens/beata_screen.dart';
 export 'package:flutter_app_rcc/screens/documentos_screen.dart';

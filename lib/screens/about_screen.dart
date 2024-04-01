@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_rcc/data/about_data.dart';
 import 'package:flutter_app_rcc/data/options_data.dart';
-import 'package:flutter_app_rcc/screens/components/custom_app_bar.dart';
+
+import 'components/components.dart';
 
 class AboutScreen extends StatelessWidget {
   static const String routeName = 'about-screen';
@@ -11,9 +12,12 @@ class AboutScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(title: listOptionsData[0].title),
+      bottomNavigationBar: const CustomNavigatorBar(),
       body: ListView(
         children: const [
-          Image(image: AssetImage('assets/images/app_banner_1.png'), fit: BoxFit.cover),
+          Image(
+              image: AssetImage('assets/images/app_banner_1.png'),
+              fit: BoxFit.cover),
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Column(

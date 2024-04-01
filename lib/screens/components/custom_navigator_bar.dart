@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../providers/current_index_provider.dart';
+import '../screens.dart';
 
 class CustomNavigatorBar extends ConsumerWidget {
   const CustomNavigatorBar({
@@ -14,6 +16,20 @@ class CustomNavigatorBar extends ConsumerWidget {
       selectedIndex: ref.read(currentIndexProvider.notifier).state,
       onDestinationSelected: (index) {
         ref.watch(currentIndexProvider.notifier).state = index;
+        switch(index) {
+          case 1:
+            context.pushNamed(FormacionScreen.routeName);
+            break;
+          case 2:
+            context.pushNamed(AlabanzasScreen.routeName);
+            break;
+          case 3:
+            context.pushNamed(OracionesScreen.routeName);
+            break;
+          default:
+            context.pushNamed(HomeScreen.routeName);
+            break;
+        }
       },
       destinations: const [
         NavigationDestination(

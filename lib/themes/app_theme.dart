@@ -27,16 +27,20 @@ class AppTheme {
           fontWeight: FontWeight.bold,
           color: appBrownColor,
         ),
+        titleMedium: GoogleFonts.aboreto(
+          fontSize: 13,
+          fontWeight: FontWeight.bold,
+          color: appBrownColor,
+        ),
         bodyLarge: GoogleFonts.montserrat(fontSize: 20, color: appBrownColor,),
+
       ));
-
-  final BoxDecoration appBoxDecoration = BoxDecoration(
-    color: appWhiteColor,
-    borderRadius: BorderRadius.circular(20),
-    border: Border.all(
-      color: appRedColor,
-      width: 1,
-    ),
-  );
-
 }
+final BoxDecoration appBoxDecoration = BoxDecoration(
+  color: appWhiteColor,
+  borderRadius: BorderRadius.circular(20),
+  border: Border.all(
+    color: appRedColor,
+    width: 1,
+  ),
+);
