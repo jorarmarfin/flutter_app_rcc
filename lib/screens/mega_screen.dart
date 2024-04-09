@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:go_router/go_router.dart';
 
 import '../data/mega_proyectos_data.dart';
 import 'components/components.dart';
@@ -40,12 +42,21 @@ class MegaScreen extends StatelessWidget {
                 const SelectableText(mega2),
                 const SelectableText('¿Por qué la denominación de Megaproyectos?', style: TextStyle(fontWeight: FontWeight.bold)),
                 const SelectableText(mega3),
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Image(image: AssetImage('assets/images/mega_comunidad.png'),width: 100,),
-                    Image(image: AssetImage('assets/images/mega_discipulado.png'),width: 100,),
-                    Image(image: AssetImage('assets/images/mega_mision.png'),width: 100,),
+                    GestureDetector(
+                      onTap: () => context.pushNamed('mega_comunidad_screen'),
+                        child: const Image(image: AssetImage('assets/images/mega_comunidad.png'),width: 100,)
+                    ),
+                    GestureDetector(
+                      onTap: () => context.pushNamed('mega_discipulado_screen'),
+                        child: const Image(image: AssetImage('assets/images/mega_discipulado.png'),width: 100,)
+                    ),
+                    GestureDetector(
+                      onTap: () => context.pushNamed('mega_mision_screen'),
+                        child: const Image(image: AssetImage('assets/images/mega_mision.png'),width: 100,)
+                    ),
                   ],
                 ),
               ],

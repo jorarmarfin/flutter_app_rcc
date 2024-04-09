@@ -72,5 +72,20 @@ final appRouter = GoRouter(initialLocation: '/', routes: <RouteBase>[
     name: OracionesScreen.routeName,
     builder: (context, state) => const OracionesScreen(),
   ),
+  GoRoute(
+    path: '/mega_comunidad',
+    name: MegaComunidadScreen.routeName,
+    builder: (context, state) => const MegaComunidadScreen(),
+  ),
+  GoRoute(
+    path: '/mega_discipulado',
+    name: MegaDiscipuladoScreen.routeName,
+    builder: (context, state) => const MegaDiscipuladoScreen(),
+  ),
+  GoRoute(
+    path: '/mega_mision',
+    name: MegaMisionScreen.routeName,
+    builder: (context, state) => const MegaMisionScreen(),
+  ),
 
 ]);

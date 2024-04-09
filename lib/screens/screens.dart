@@ -1,3 +1,6 @@
+export 'package:flutter_app_rcc/screens/mega_mision_screen.dart';
+export 'package:flutter_app_rcc/screens/mega_discipulado_screen.dart';
+export 'package:flutter_app_rcc/screens/mega_comunidad_screen.dart';
 export 'package:flutter_app_rcc/screens/oraciones_screen.dart';
 export 'package:flutter_app_rcc/screens/alabanzas_screen.dart';
 export 'package:flutter_app_rcc/screens/formacion_screen.dart';
